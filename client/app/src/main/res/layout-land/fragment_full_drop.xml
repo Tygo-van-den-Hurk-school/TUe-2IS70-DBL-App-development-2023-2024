@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    app:cardUseCompatPadding="true"
+    app:cardMaxElevation="5dp"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="25dp"
+    app:cardBackgroundColor="@color/purple_50"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:id="@+id/full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@color/purple_700"
+        >
+        <LinearLayout
+            android:id="@+id/full_drop_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/full_drop_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Drop title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/purple_500"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/close_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/baseline_close_40"
+                android:backgroundTint="@color/purple_500"
+                android:contentDescription="@string/close"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/full_drop_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/inter_medium"
+            android:textColor="@color/purple_500"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linear_layout_fulldrop"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            >
+
+            <TextView
+                android:id="@+id/full_drop_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_10_00"
+                android:textColor="@color/purple_700"
+                />
+
+            <TextView
+                android:id="@+id/username_poster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/username"
+                android:textColor="@color/purple_700"
+                android:textSize="16sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/like_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="bottom"
+                android:background="@drawable/baseline_thumb_up_24"
+                android:backgroundTint="@color/teal_700"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/upvote_count2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_10"
+                android:layout_weight="0.1"
+                android:textColor="@color/purple_700"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dislike_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/baseline_thumb_down_24"
+                android:backgroundTint="@color/red"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/report_button_full"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:background="@drawable/baseline_flag_24"
+                android:backgroundTint="@color/red"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/delete_button_full"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="bottom"
+                android:background="@drawable/baseline_delete_24"
+                android:backgroundTint="@color/cardview_dark_background"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comment_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/card_comment" />
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/comment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/standard_button"
+            android:backgroundTint="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.433"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/full_drop_content"
+            app:layout_constraintVertical_bias="0.965">
+
+            <EditText
+                android:id="@+id/comment_text_box"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/standard_button"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_medium"
+                android:hint="@string/add_comment"
+                android:inputType="textCapSentences|textMultiLine"
+                android:textColor="@color/black"
+                android:textColorHint="@color/teal_700"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:id="@+id/comment_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/baseline_send_24"
+                android:backgroundTint="@color/teal_700"
+                android:contentDescription="@string/send_comment"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
